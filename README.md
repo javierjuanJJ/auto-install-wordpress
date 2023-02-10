@@ -13,7 +13,6 @@ The project requires the following tools to be built and run:
 ### Define environment variables
 
 Create a .env file at the root of the project with the following configuration:
-
     MYSQL_ROOT_PASSWORD=my_root_password
     MYSQL_HOST=database
     MYSQL_DATABASE=wordpress
@@ -25,6 +24,13 @@ Create a .env file at the root of the project with the following configuration:
     WORDPRESS_ADMIN_PASSWORD=vancouver2019
     WORDPRESS_ADMIN_EMAIL=test@example.com
     WEBSERVER_PORT=8000
+    WORDPRESS_LOCALE=es_ES
+    WORDPRESS_WEBSITE_TITLE="Title blog"
+    PUBLICHOST:localhost
+    FTP_USER_NAME:bob
+    FTP_USER_PASS:foobarqux
+    FTP_USER_HOME:/var/www/html
+
 
 * `MYSQL_ROOT_PASSWORD`: Password for the *root* user in MySQL (no app should connect with it) — recommendation: complex password
 * `MYSQL_HOST`: Host of the MySQL database. If using the Docker MySQL instance, set `database` (it is the Docker container name for the database, see *docker-compose.yml* file). If it is hosted on an external server, set the IP or host.
@@ -37,6 +43,13 @@ Create a .env file at the root of the project with the following configuration:
 * `WORDPRESS_ADMIN_USERNAME`: Username of the admin user for WordPress admin interface (example: *admin*)
 * `WORDPRESS_ADMIN_PASSWORD`: Password of the admin user (choose wisely!).
 * `WEBSERVER_PORT`: **Port that will be exposed for Nginx** (Example if *8000* is chosen, the website will be locally available at http://localhost:8000).
+
+* `WORDPRESS_LOCALE`: Language of Wordpress
+* `WORDPRESS_WEBSITE_TITLE`: Title of wordpress
+* `PUBLICHOST`: IP host
+* `FTP_USER_NAME`: Username of user what it will connect to FTP_USER_HOME
+* `FTP_USER_PASS`: Password of user what it will connect to FTP_USER_HOME
+* `FTP_USER_HOME`: Path what connect host from wordpress. Normally is **/var/www/html**
 
 ### Run project
 
@@ -81,6 +94,7 @@ The following containers are created and configured in `docker-compose.yml`:
 * *wordpress*: A WordPress Docker image with PHP 7.3.
 * *database*: A MySQL Docker image.
 * *toolbox*: A toolbox containing WP-CLI and running a Makefile.
+* *ftp*: A container what is a ftp image what connect to FTP_USER_HOME
 
 The `restart: always` instruction allows containers to get restarted if they stop for any reason
 or when the server is restarted.

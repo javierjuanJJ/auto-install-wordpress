@@ -7,32 +7,11 @@ services:
     links:
       - database:mysql
     volumes:
-      - wordpress_data:/var/www/html:rw
+      - wordpress_data:/var/www/html
       - ./plugins/wp-migrations:/var/www/html/wp-content/plugins/wp-migrations
       - ./themes/my-simple-theme:/var/www/html/wp-content/themes/my-simple-theme
     restart: always
 
-  ftp:
-    # optionally replace username/repo:tag with your name and image details
-    image: stilliard/pure-ftpd:latest
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: on-failure
-    environment:
-      PUBLICHOST: ${PUBLICHOST}
-      FTP_USER_NAME: ${FTP_USER_NAME}
-      FTP_USER_PASS: ${FTP_USER_PASS}
-      FTP_USER_HOME: ${FTP_USER_HOME}
-      FTP_USER_UID: 33
-      FTP_USER_GID: 33
-    volumes:
-      - wordpress_data:/var/www/html
-      - ./data/ftp:/etc/ssl/private
-    ports:
-      - "21:21"
-      - "30000-30009:30000-30009"
-      
   database:
     image: mysql:5.7
     restart: always
@@ -81,7 +60,7 @@ services:
       WORDPRESS_WEBSITE_URL: ${WORDPRESS_WEBSITE_URL}
       WORDPRESS_LOCALE: ${WORDPRESS_LOCALE}
       WORDPRESS_WEBSITE_POST_URL_STRUCTURE: "/%year%/%monthnum%/%day%/%postname%/"
-      WORDPRESS_WEBSITE_TITLE: ${WORDPRESS_WEBSITE_TITLE}
+      WORDPRESS_WEBSITE_TITLE: "My beautiful website"
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
