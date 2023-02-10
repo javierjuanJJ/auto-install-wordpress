@@ -1,0 +1,16 @@
+{
+    "name": "michaelperrin/wp-migrations",
+    "description": "WordPress plugin for running data migrations",
+    "authors": [
+        {
+            "name": "Michaël Perrin",
+            "email": "contact@michaelperrin.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "WP\\": "src/",
+            "Migration\\": "../../migrations/"
+        }
+    }
+}
