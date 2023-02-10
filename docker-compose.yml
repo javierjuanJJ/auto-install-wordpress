@@ -7,7 +7,7 @@ services:
     links:
       - database:mysql
     volumes:
-      - wordpress_data:/var/www/html:rw
+      - wordpress_data:/var/www/html
       - ./plugins/wp-migrations:/var/www/html/wp-content/plugins/wp-migrations
       - ./themes/my-simple-theme:/var/www/html/wp-content/themes/my-simple-theme
     restart: always
