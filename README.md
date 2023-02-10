@@ -13,6 +13,7 @@ The project requires the following tools to be built and run:
 ### Define environment variables
 
 Create a .env file at the root of the project with the following configuration:
+
     MYSQL_ROOT_PASSWORD=my_root_password
     
     MYSQL_HOST=database
