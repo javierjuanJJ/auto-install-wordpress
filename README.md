@@ -14,22 +14,48 @@ The project requires the following tools to be built and run:
 
 Create a .env file at the root of the project with the following configuration:
     MYSQL_ROOT_PASSWORD=my_root_password
+    
     MYSQL_HOST=database
+    
     MYSQL_DATABASE=wordpress
+    
     MYSQL_USER=wordpress
+    
     MYSQL_USER_PASSWORD=wordpress_pwd
+    
     WORDPRESS_DOMAIN_NAME=localhost:8000
+    
     WORDPRESS_WEBSITE_URL=http://localhost:8000
+    
     WORDPRESS_ADMIN_USERNAME=admin
+    
     WORDPRESS_ADMIN_PASSWORD=vancouver2019
+    
     WORDPRESS_ADMIN_EMAIL=test@example.com
+    
     WEBSERVER_PORT=8000
+    
     WORDPRESS_LOCALE=es_ES
+    
     WORDPRESS_WEBSITE_TITLE="Title blog"
+    
     PUBLICHOST:localhost
+    
     FTP_USER_NAME:bob
+    
     FTP_USER_PASS:foobarqux
+    
     FTP_USER_HOME:/var/www/html
+    
+    FTP_ACTIVE_PORT=21
+    
+    FTP_PASSIVE_PORT_BEGIN=30000
+    
+    FTP_PASSIVE_PORT_END=30009
+    
+    MYSQL_PORT=3306
+    
+    PHPMYADMIN_PORT=8082
 
 
 * `MYSQL_ROOT_PASSWORD`: Password for the *root* user in MySQL (no app should connect with it) — recommendation: complex password
@@ -50,6 +76,13 @@ Create a .env file at the root of the project with the following configuration:
 * `FTP_USER_NAME`: Username of user what it will connect to FTP_USER_HOME
 * `FTP_USER_PASS`: Password of user what it will connect to FTP_USER_HOME
 * `FTP_USER_HOME`: Path what connect host from wordpress. Normally is **/var/www/html**
+* `FTP_USER_PASS`: Password of user what it will connect to FTP_USER_HOME
+
+* `FTP_ACTIVE_PORT`: Active port FTP. Normally is **21**
+* `FTP_PASSIVE_PORT_BEGIN`: Beginner passive port FTP.
+* `FTP_PASSIVE_PORT_END`: END passive port FTP.
+* `MYSQL_PORT`: MYSQL port.
+* `PHPMYADMIN_PORT`: PHPMYADMIN port.
 
 ### Run project
 
