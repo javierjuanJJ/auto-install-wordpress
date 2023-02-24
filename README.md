@@ -31,8 +31,6 @@ Create a .env file at the root of the project with the following configuration:
     MYSQL_USER_PASSWORD=wordpress_pwd
     
     # Wordpress configuration
-    #WORDPRESS_DOMAIN_NAME="localhost:8000"
-    #WORDPRESS_WEBSITE_URL="http://localhost:8000"
     WORDPRESS_DOMAIN_NAME="${PUBLICHOST}:${WEBSERVER_PORT}"
     WORDPRESS_WEBSITE_URL="http://${PUBLICHOST}:${WEBSERVER_PORT}"
     WORDPRESS_ADMIN_USERNAME=admin
