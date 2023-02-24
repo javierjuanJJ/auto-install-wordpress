@@ -1,10 +1,10 @@
-WORDPRESS_TOOLBOX=@docker compose run --rm toolbox
+WORDPRESS_TOOLBOX=@docker-compose run --rm toolbox
 
 start:
-	docker compose up -d --remove-orphans
+	docker-compose up -d --remove-orphans
 
 stop:
-	docker compose stop
+	docker-compose stop
 
 install: start wordpress_configure wordpress_install_plugins wordpress_set_theme
 
@@ -15,9 +15,9 @@ wordpress_configure:
 	@echo "✅ WordPress is configured."
 
 wordpress_fix_permissions:
-	docker compose exec -T wordpress chown www-data /var/www/html/wp-content
-	docker compose exec -T wordpress chown www-data /var/www/html/wp-content/plugins
-	docker compose exec -T wordpress chown www-data /var/www/html/wp-content/themes
+	docker-compose exec -T wordpress chown www-data /var/www/html/wp-content
+	docker-compose exec -T wordpress chown www-data /var/www/html/wp-content/plugins
+	docker-compose exec -T wordpress chown www-data /var/www/html/wp-content/themes
 
 wordpress_install_plugins: wordpress_fix_permissions
 	@echo "➡️ Installing and activating plugins..."
