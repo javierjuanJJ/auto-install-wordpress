@@ -15,7 +15,8 @@ The project requires the following tools to be built and run:
 Create a .env file at the root of the project with the following configuration:
 
     # PORTS
-    WEBSERVER_PORT=8000
+    
+    WEBSERVER_PORT=80
     FTP_ACTIVE_PORT=21
     FTP_PASSIVE_PORT_BEGIN=30000
     FTP_PASSIVE_PORT_END=30009
@@ -24,6 +25,7 @@ Create a .env file at the root of the project with the following configuration:
     PHPMYADMIN_PORT=8082
     
     # Mysql configuration
+    
     MYSQL_ROOT_PASSWORD=my_root_password
     MYSQL_HOST=database
     MYSQL_DATABASE=wordpress
@@ -31,17 +33,19 @@ Create a .env file at the root of the project with the following configuration:
     MYSQL_USER_PASSWORD=wordpress_pwd
     
     # Wordpress configuration
+    
     WORDPRESS_DOMAIN_NAME="${PUBLICHOST}:${WEBSERVER_PORT}"
     WORDPRESS_WEBSITE_URL="http://${PUBLICHOST}:${WEBSERVER_PORT}"
-    WORDPRESS_ADMIN_USERNAME=admin
-    WORDPRESS_ADMIN_PASSWORD=vancouver2019
-    WORDPRESS_ADMIN_EMAIL=test@example.com
+    WORDPRESS_ADMIN_USERNAME=admin_wordpress
+    WORDPRESS_ADMIN_PASSWORD=password_admin_wordpress
+    WORDPRESS_ADMIN_EMAIL=admin_wordpress@gmail.com
     WORDPRESS_LOCALE=es_ES
     WORDPRESS_WEBSITE_TITLE="Title blog"
     
     # FTP configuration
-    FTP_USER_NAME=bob
-    FTP_USER_PASS=foobarqux
+    
+    FTP_USER_NAME=user
+    FTP_USER_PASS=password_ftp
     FTP_USER_HOME=/var/www/html
 
 * `MYSQL_ROOT_PASSWORD`: Password for the *root* user in MySQL (no app should connect with it) — recommendation: complex password
