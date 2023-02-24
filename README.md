@@ -14,22 +14,6 @@ The project requires the following tools to be built and run:
 
 Create a .env file at the root of the project with the following configuration:
 
-    # Mysql configuration
-    MYSQL_ROOT_PASSWORD=my_root_password
-    MYSQL_HOST=database
-    MYSQL_DATABASE=wordpress
-    MYSQL_USER=wordpress
-    MYSQL_USER_PASSWORD=wordpress_pwd
-    
-    # Wordpress configuration
-    WORDPRESS_DOMAIN_NAME=localhost:8000
-    WORDPRESS_WEBSITE_URL=http://localhost:8000
-    WORDPRESS_ADMIN_USERNAME=admin
-    WORDPRESS_ADMIN_PASSWORD=vancouver2019
-    WORDPRESS_ADMIN_EMAIL=test@example.com
-    WORDPRESS_LOCALE=es_ES
-    WORDPRESS_WEBSITE_TITLE="Title blog"
-    
     # PORTS
     WEBSERVER_PORT=8000
     FTP_ACTIVE_PORT=21
@@ -38,6 +22,24 @@ Create a .env file at the root of the project with the following configuration:
     PUBLICHOST:localhost
     MYSQL_PORT=3306
     PHPMYADMIN_PORT=8082
+    
+    # Mysql configuration
+    MYSQL_ROOT_PASSWORD=my_root_password
+    MYSQL_HOST=database
+    MYSQL_DATABASE=wordpress
+    MYSQL_USER=wordpress
+    MYSQL_USER_PASSWORD=wordpress_pwd
+    
+    # Wordpress configuration
+    #WORDPRESS_DOMAIN_NAME="localhost:8000"
+    #WORDPRESS_WEBSITE_URL="http://localhost:8000"
+    WORDPRESS_DOMAIN_NAME="${PUBLICHOST}:${WEBSERVER_PORT}"
+    WORDPRESS_WEBSITE_URL="http://${PUBLICHOST}:${WEBSERVER_PORT}"
+    WORDPRESS_ADMIN_USERNAME=admin
+    WORDPRESS_ADMIN_PASSWORD=vancouver2019
+    WORDPRESS_ADMIN_EMAIL=test@example.com
+    WORDPRESS_LOCALE=es_ES
+    WORDPRESS_WEBSITE_TITLE="Title blog"
     
     # FTP configuration
     FTP_USER_NAME:bob
