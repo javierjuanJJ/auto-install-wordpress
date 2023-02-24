@@ -19,7 +19,7 @@ Create a .env file at the root of the project with the following configuration:
     FTP_ACTIVE_PORT=21
     FTP_PASSIVE_PORT_BEGIN=30000
     FTP_PASSIVE_PORT_END=30009
-    PUBLICHOST:localhost
+    PUBLICHOST=localhost
     MYSQL_PORT=3306
     PHPMYADMIN_PORT=8082
     
@@ -42,9 +42,9 @@ Create a .env file at the root of the project with the following configuration:
     WORDPRESS_WEBSITE_TITLE="Title blog"
     
     # FTP configuration
-    FTP_USER_NAME:bob
-    FTP_USER_PASS:foobarqux
-    FTP_USER_HOME:/var/www/html
+    FTP_USER_NAME=bob
+    FTP_USER_PASS=foobarqux
+    FTP_USER_HOME=/var/www/html
 
 * `MYSQL_ROOT_PASSWORD`: Password for the *root* user in MySQL (no app should connect with it) — recommendation: complex password
 * `MYSQL_HOST`: Host of the MySQL database. If using the Docker MySQL instance, set `database` (it is the Docker container name for the database, see *docker-compose.yml* file). If it is hosted on an external server, set the IP or host.
