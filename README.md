@@ -14,50 +14,35 @@ The project requires the following tools to be built and run:
 
 Create a .env file at the root of the project with the following configuration:
 
+    # Mysql configuration
     MYSQL_ROOT_PASSWORD=my_root_password
-    
     MYSQL_HOST=database
-    
     MYSQL_DATABASE=wordpress
-    
     MYSQL_USER=wordpress
-    
     MYSQL_USER_PASSWORD=wordpress_pwd
     
+    # Wordpress configuration
     WORDPRESS_DOMAIN_NAME=localhost:8000
-    
     WORDPRESS_WEBSITE_URL=http://localhost:8000
-    
     WORDPRESS_ADMIN_USERNAME=admin
-    
     WORDPRESS_ADMIN_PASSWORD=vancouver2019
-    
     WORDPRESS_ADMIN_EMAIL=test@example.com
-    
-    WEBSERVER_PORT=8000
-    
     WORDPRESS_LOCALE=es_ES
-    
     WORDPRESS_WEBSITE_TITLE="Title blog"
     
-    PUBLICHOST:localhost
-    
-    FTP_USER_NAME:bob
-    
-    FTP_USER_PASS:foobarqux
-    
-    FTP_USER_HOME:/var/www/html
-    
+    # PORTS
+    WEBSERVER_PORT=8000
     FTP_ACTIVE_PORT=21
-    
     FTP_PASSIVE_PORT_BEGIN=30000
-    
     FTP_PASSIVE_PORT_END=30009
-    
+    PUBLICHOST:localhost
     MYSQL_PORT=3306
-    
     PHPMYADMIN_PORT=8082
-
+    
+    # FTP configuration
+    FTP_USER_NAME:bob
+    FTP_USER_PASS:foobarqux
+    FTP_USER_HOME:/var/www/html
 
 * `MYSQL_ROOT_PASSWORD`: Password for the *root* user in MySQL (no app should connect with it) — recommendation: complex password
 * `MYSQL_HOST`: Host of the MySQL database. If using the Docker MySQL instance, set `database` (it is the Docker container name for the database, see *docker-compose.yml* file). If it is hosted on an external server, set the IP or host.
