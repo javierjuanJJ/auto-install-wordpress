@@ -16,6 +16,7 @@ Create a .env file at the root of the project with the following configuration:
 
     # PORTS
     
+    WEBSERVER_NGINX_PORT=9000
     WEBSERVER_PORT=80
     FTP_ACTIVE_PORT=21
     FTP_PASSIVE_PORT_BEGIN=30000
