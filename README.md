@@ -19,6 +19,17 @@ Download the file Docker installation with images for containers:
 Install docker with root permissions:
 
     sh installDockerWordpress.sh
+    
+    
+### Clone repository
+
+Clone the repository for install:
+
+    git clone https://github.com/javierjuanJJ/auto-install-wordpress.git
+    
+You can rename folder:
+
+    mv auto-install-wordpress <<wordpress name folder>>
 
 ### Define environment variables
 
