@@ -20,4 +20,5 @@ docker pull stilliard/pure-ftpd:latest
 docker pull mysql:5.7
 docker pull phpmyadmin/phpmyadmin
 docker pull nginx:1.14-alpine
+docker pull michaelperrin/wordpress-toolbox:latest
 docker run hello-world
