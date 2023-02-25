@@ -10,6 +10,16 @@ The project requires the following tools to be built and run:
 * Docker
 * Docker Compose
 
+### Download installation file
+
+Download the file Docker installation with images for containers:
+
+    wget -O installDockerWordpress.sh https://raw.githubusercontent.com/javierjuanJJ/auto-install-wordpress/master/installDockerWordpress.sh
+    
+Install docker with root permissions:
+
+    sh installDockerWordpress.sh
+
 ### Define environment variables
 
 Create a .env file at the root of the project with the following configuration:
