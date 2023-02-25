@@ -10,13 +10,8 @@ install: start wordpress_configure wordpress_install_plugins wordpress_set_theme
 
 fix_permssions2:
 	docker-compose exec -T wordpress chmod -R 755 /var/www/html
-	docker-compose exec -T wordpress ls -lR /var/www/
-	docker-compose exec -T wordpress ls -lR /var/www/html
 
 wordpress_configure:
-	#docker-compose exec -T wordpress ls -l /var/www
-	#docker-compose exec -T wordpress ls -l /var/www/html
-	docker-compose exec -T wordpress ls -lR /var/www/html
 	docker-compose exec -T wordpress chmod -R 777 /var/www/html
 	$(WORDPRESS_TOOLBOX) run_configure
 	$(WORDPRESS_TOOLBOX) run_configure_url

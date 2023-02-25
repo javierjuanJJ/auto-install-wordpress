@@ -10,6 +10,8 @@ services:
       - wordpress_data:/var/www/html:rw
       - ./plugins/wp-migrations:/var/www/html/wp-content/plugins/wp-migrations
       - ./themes/my-simple-theme:/var/www/html/wp-content/themes/my-simple-theme
+    ports:
+      - "${WEBSERVER_PORT}:80"
     restart: always
 
   ftp:
@@ -57,7 +59,7 @@ services:
       - ./plugins/wp-migrations:/var/www/html/wp-content/plugins/wp-migrations
       - ./themes/my-simple-theme:/var/www/html/wp-content/themes/my-simple-theme
     ports:
-      - ${WEBSERVER_PORT}:80
+      - ${WEBSERVER_NGINX_PORT}:80
 
   toolbox:
     image: michaelperrin/wordpress-toolbox
