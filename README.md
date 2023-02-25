@@ -30,10 +30,18 @@ Clone the repository for install:
 You can rename folder:
 
     mv auto-install-wordpress <<wordpress name folder>>
+    
+You must change directory to <<wordpress name folder>>:
+
+    cd <<wordpress name folder>>
 
 ### Define environment variables
 
 Create a .env file at the root of the project with the following configuration:
+    
+    nano .env
+    
+Copy and paste all content in file and change ports and user information of environment variables.
 
     # PORTS
     
